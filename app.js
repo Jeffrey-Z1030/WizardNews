@@ -3,7 +3,7 @@ const { format } = require("morgan");
 const morgan = require("morgan");
 const postBank = require("./postBank")
 const app = express();
-const PORT = 1337;
+
 
 
 app.use(express.static('public'))
@@ -93,7 +93,7 @@ app.get('/posts/:id',(req, res) => {
 
 
 
-
+const { PORT = 1337} = process.env;
 
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
